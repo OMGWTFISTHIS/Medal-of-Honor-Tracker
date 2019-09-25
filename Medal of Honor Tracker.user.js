@@ -8,8 +8,8 @@
 // @require     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js
 // @match      *://hackforums.net/gamecp.php?action=profile*
 // @copyright  2016+
-// @updateURL https://github.com/xadamxk/HF-Userscripts/raw/master/HF%20Game/HFGameAdditions.user.js
-// @downloadURL https://github.com/xadamxk/HF-Userscripts/raw/master/HF%20Game/HFGameAdditions.user.js
+// @updateURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/Medal%20of%20Honor%20Tracker.user.js
+// @downloadURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/Medal%20of%20Honor%20Tracker.user.js
 // @iconURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/MOH.png
 // ==/UserScript==
 // ------------------------------ Changelog -----------------------------
