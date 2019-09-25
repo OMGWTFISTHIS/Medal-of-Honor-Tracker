@@ -34,6 +34,8 @@ debugPrint("Current xp of level: " + currentlevelXP);
 var totalXP = parseInt(determineLevelXP(currentlevel)) + parseInt(currentlevelXP);
 debugPrint("Total xp: " + totalXP);
 
+
+// Tooltip percentage
 function getWholePercent(percentFor, percentOf) {
 	return Math.floor(percentFor / percentOf * 100);
 }
