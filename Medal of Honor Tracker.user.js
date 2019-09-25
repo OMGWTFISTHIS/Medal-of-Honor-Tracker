@@ -34,6 +34,12 @@ debugPrint("Current xp of level: " + currentlevelXP);
 var totalXP = parseInt(determineLevelXP(currentlevel)) + parseInt(currentlevelXP);
 debugPrint("Total xp: " + totalXP);
 
+function getWholePercent(percentFor, percentOf) {
+	return Math.floor(percentFor / percentOf * 100);
+}
+
+var wholePercent = getWholePercent(totalXP,goal);
+
 // Clone existing progress bar (and children) but change the IDs to be unique
 $("#progress-bar").parent().clone().appendTo(".game-profile-player")
 	.children().first().attr("id", "myProgressBar")
@@ -43,7 +49,11 @@ $("#progress-bar").parent().clone().appendTo(".game-profile-player")
 $("#myProgressBar").css({
 	"border-radius": "6px"
 });
-$("#myProgressBarPercentage").css({
+$("#myProgressBarPercentage")
+	.attr({
+		"title": "Medal of Honor Progress: " + getWholePercent(totalXP,goal) + "%"
+	})
+	.css({
 	"width": (Math.round((totalXP / goal) * 100 * 10000) / 10000) + "%",
 	"transition": "0.1s",
 	"background-color": "#e2ba2f",
