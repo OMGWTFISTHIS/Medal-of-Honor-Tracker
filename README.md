@@ -1,5 +1,6 @@
 # Medal-of-Honor-Tracker
 ![Header](https://i.imgur.com/4LqDeFn.png)
+
 This Userscript will create an extra progress bar in the [Hack Game](https://hackforums.net/gamecp.php), to track your progression towards the [Medal of Honor](https://hackforums.net/myawards.php?awid=117) award. It is based off your total XP, not your level.
 
 Shoutout to @xadamxk for literally re-writing the entire thing and still letting me upload it, because I'm trash. You blew my mind. Thank you!
