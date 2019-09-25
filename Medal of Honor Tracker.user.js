@@ -34,12 +34,7 @@ debugPrint("Current xp of level: " + currentlevelXP);
 var totalXP = parseInt(determineLevelXP(currentlevel)) + parseInt(currentlevelXP);
 debugPrint("Total xp: " + totalXP);
 
-
 // Tooltip percentage
-function getWholePercent(percentFor, percentOf) {
-	return Math.floor(percentFor / percentOf * 100);
-}
-
 var wholePercent = getWholePercent(totalXP,goal);
 
 // Clone existing progress bar (and children) but change the IDs to be unique
@@ -53,7 +48,7 @@ $("#myProgressBar").css({
 });
 $("#myProgressBarPercentage")
 	.attr({
-		"title": "Medal of Honor Progress: " + getWholePercent(totalXP,goal) + "%"
+		"title": "Medal of Honor Progress: " + wholePercent + "%"
 	})
 	.css({
 	"width": (Math.round((totalXP / goal) * 100 * 10000) / 10000) + "%",
@@ -81,4 +76,8 @@ function numberWithCommas(x) {
 
 function debugPrint(text) {
 	if (debug) console.log(text);
+}
+
+function getWholePercent(percentFor, percentOf) {
+	return Math.floor(percentFor / percentOf * 100);
 }
