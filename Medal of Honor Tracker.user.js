@@ -12,6 +12,7 @@
 // @iconURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/MOH.png
 // ==/UserScript==
 // ------------------------------ Changelog -----------------------------
+// v 1.0.2: Fixed progressbar title
 // v 1.0.1: Rewrote v1 & implemented formula for level xp
 // v 1.0.0: MOH Tracker
 // ------------------------------ Dev Notes -----------------------------
@@ -43,7 +44,11 @@ $("#progress-bar").parent().clone().appendTo(".game-profile-player")
 	.children().first().attr("id", "myProgressBarPercentage");
 
 // Change style properties of the clone (and child)
-$("#myProgressBar").css({
+$("#myProgressBar")
+    .attr({
+        "title": "Medal of Honor Progress: " + wholePercent + "%"
+    })
+    .css({
 	"border-radius": "6px"
 });
 $("#myProgressBarPercentage")
