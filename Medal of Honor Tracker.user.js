@@ -12,6 +12,7 @@
 // @iconURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/MOH.png
 // ==/UserScript==
 // ------------------------------ Changelog -----------------------------
+// v 1.0.3: Added decimals to percentage for more precise tracking
 // v 1.0.2: Fixed progressbar title
 // v 1.0.1: Rewrote v1 & implemented formula for level xp
 // v 1.0.0: MOH Tracker
@@ -56,7 +57,7 @@ $("#myProgressBarPercentage")
 		"title": "Medal of Honor Progress: " + wholePercent + "%"
 	})
 	.css({
-	"width": (Math.round((totalXP / goal) * 100 * 10000) / 10000) + "%",
+	"width": (Math.round((totalXP / goal) * 100 * 100) / 100) + "%",
 	"transition": "0.1s",
 	"background-color": "#e2ba2f",
 	"box-shadow": "inset 0px 0px 3px 1px #ffffff12",
@@ -67,7 +68,7 @@ $("#myProgressBarPercentage")
 
 // Update progress text
 $("#myProgressBar").parent().find(".tinytext").text(numberWithCommas(totalXP) + " / " + numberWithCommas(goal) + " xp");
-debugPrint((Math.round((totalXP / goal) * 100 * 10000) / 10000))
+debugPrint((Math.round((totalXP / goal) * 100 * 100) / 100))
 
 
 // ------------------------------ FUNCTIONS ------------------------------
@@ -84,5 +85,5 @@ function debugPrint(text) {
 }
 
 function getWholePercent(percentFor, percentOf) {
-	return Math.floor(percentFor / percentOf * 100);
+	return Math.round((totalXP / goal) * 100 * 100) / 100;
 }
