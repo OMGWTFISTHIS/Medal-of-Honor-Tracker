@@ -2,7 +2,7 @@
 // @name       Medal of Honor Tracker
 // @author OMGWTFISTHIS
 // @namespace  https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/
-// @version    1.0.2
+// @version    1.0.3
 // @description Track the scale progression of gaining the Medal of Honor award on Hack Forums.
 // @require     https://code.jquery.com/jquery-3.1.1.js
 // @match      *://hackforums.net/gamecp.php?action=profile*
