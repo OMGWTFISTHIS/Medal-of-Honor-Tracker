@@ -2,7 +2,7 @@
 // @name       Medal of Honor Tracker
 // @author OMGWTFISTHIS
 // @namespace  https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/
-// @version    1.0.3
+// @version    1.0.4
 // @description Track the scale progression of gaining the Medal of Honor award on Hack Forums.
 // @require     https://code.jquery.com/jquery-3.1.1.js
 // @match      *://hackforums.net/gamecp.php?action=profile*
@@ -12,6 +12,7 @@
 // @iconURL https://github.com/OMGWTFISTHIS/Medal-of-Honor-Tracker/raw/master/MOH.png
 // ==/UserScript==
 // ------------------------------ Changelog -----------------------------
+// v 1.0.4: Fixed the progress bar when a user has greater than the maximum XP required for the MOH award
 // v 1.0.3: Added decimals to percentage for more precise tracking
 // v 1.0.2: Fixed progressbar title
 // v 1.0.1: Rewrote v1 & implemented formula for level xp
@@ -38,6 +39,9 @@ debugPrint("Total xp: " + totalXP);
 
 // Tooltip percentage
 var wholePercent = getWholePercent(totalXP,goal);
+if (wholePercent >= 100) {
+ wholePercent = 100;
+}
 
 // Clone existing progress bar (and children) but change the IDs to be unique
 $("#progress-bar").parent().clone().appendTo(".game-profile-player")
@@ -57,7 +61,7 @@ $("#myProgressBarPercentage")
 		"title": "Medal of Honor Progress: " + wholePercent + "%"
 	})
 	.css({
-	"width": (Math.round((totalXP / goal) * 100 * 100) / 100) + "%",
+	"width": wholePercent + "%",
 	"transition": "0.1s",
 	"background-color": "#e2ba2f",
 	"box-shadow": "inset 0px 0px 3px 1px #ffffff12",
